@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
 const Platform = require("../models/Platform");
 
+// Lets in EITHER an API key (big platforms) OR a login token (portal)
 async function authPlatform(req, res, next) {
   try {
     const apiKey = req.header("x-api-key");

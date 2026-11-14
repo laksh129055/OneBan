@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "node --watch-path=./src src/server.js",
-    "seed": "node src/seed.js"
+    "seed": "node src/seed.js",
+    "rotate-keys": "node src/seed.js --rotate"
   },
   "keywords": [],
   "author": "",
