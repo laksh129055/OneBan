@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OneBan — live demo</title>
+  <link rel="stylesheet" href="demo.css">
+</head>
+<body class="hub">
+  <main class="hub-main">
+    <p class="eyebrow">OneBan · live demo</p>
+    <h1>Banned once. Blocked everywhere.</h1>
+    <p class="lede">Three separate companies. One shared safety network. Ban someone for harassment on one platform, then watch him get stopped when he applies to the next.</p>
+
+    <div class="hub-cards">
+      <a class="hub-card" style="--brand:#96610f" data-href="quickride.html">
+        <span class="hub-icon">🚕</span>
+        <strong>QuickRide</strong>
+        <span>Ride-hailing · drivers</span>
+      </a>
+      <a class="hub-card" style="--brand:#2563c9" data-href="homefix.html">
+        <span class="hub-icon">🔧</span>
+        <strong>HomeFix</strong>
+        <span>Home services · technicians</span>
+      </a>
+      <a class="hub-card" style="--brand:#c2410c" data-href="fooddash.html">
+        <span class="hub-icon">🍱</span>
+        <strong>FoodDash</strong>
+        <span>Food delivery · delivery partners</span>
+      </a>
+    </div>
+
+    <section class="steps">
+      <h2>Run the demo in four steps</h2>
+      <ol>
+        <li><b>QuickRide:</b> register a driver. He is approved, because nobody has reported him.</li>
+        <li><b>QuickRide:</b> a rider's complaint is verified. Click <i>Report &amp; ban</i> on that driver.</li>
+        <li><b>HomeFix:</b> the same man applies as a technician with the same phone number. The application is stopped.</li>
+        <li><b>FoodDash:</b> he tries again with a new SIM but the same ID number. Stopped again.</li>
+      </ol>
+      <p class="fine">The network stores only a keyed hash of each phone and ID number. No platform sees another platform's data, and a match goes to a human reviewer rather than triggering an automatic ban.</p>
+    </section>
+  </main>
+  <script>
+    // keep ?api=... (used for local testing) when moving between pages
+    document.querySelectorAll("[data-href]").forEach(function (a) {
+      a.href = a.dataset.href + location.search;
+    });
+  </script>
+</body>
+</html>
