@@ -15,6 +15,9 @@ app.get("/", (req, res) => res.json({ status: "API running" }));
 app.get("/whoami", verifyApiKey, (req, res) => {
   res.json({ message: "Key accepted", platform: req.platform.name });
 });
+// Main features — both protected by the API key guard
+app.use("/signal", verifyApiKey, require("./routes/signal"));
+app.use("/check", verifyApiKey, require("./routes/check"));
 
 mongoose.connect(process.env.MONGO_URI).then(() => {
   console.log("MongoDB connected");
