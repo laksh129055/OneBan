@@ -2,6 +2,8 @@ const mongoose = require("mongoose");
 
 // One document = one member company (QuickRide, HomeFix, MatchMate)
 const platformSchema = new mongoose.Schema({
+  email: { type: String, unique: true, sparse: true },
+  passwordHash: { type: String },
   name:   { type: String, required: true, unique: true },
   type:   { type: String, required: true },
   apiKey: { type: String, required: true, unique: true },
